@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎥</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+               background: radial-gradient(circle at top, #0A1532, #060B1F 80%);
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            overflow: hidden;
+            text-align: center;
+        }
+
+       
+
+        video {
+            width: 80%;
+            max-width: 900px;
+            height: 60vh;
+            border-radius: 16px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+            animation: zoomIn 1.2s ease-out forwards;
+            opacity: 0;
+        }
+
+        button {
+            margin-top: 30px;
+            background: white;
+            color: #ff5e94;
+            border: none;
+            padding: 12px 26px;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            animation: fadeIn 2.5s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: #ffe8f1;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            opacity: 0.8;
+            animation: fall linear infinite;
+            border-radius: 50%;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10px) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    
+        <img src="/free-icon-happy-birthday-8800647.png" alt="" style="max-width: 200px; max-height: 200px; ">
+   
+
+    <video controls autoplay>
+        <source src="/IMG_0190.MOV" type="video/mp4">
+        Ваш браузер не підтримує відео.
+    </video>
+
+
+
+    <script>
+
+        for (let i = 0; i < 40; i++) {
+            const conf = document.createElement('div');
+            conf.classList.add('confetti');
+            conf.style.left = Math.random() * 100 + 'vw';
+            conf.style.animationDuration = 3 + Math.random() * 3 + 's';
+            conf.style.background = `hsl(${Math.random() * 360}, 80%, 60%)`;
+            document.body.appendChild(conf);
+        }
+    </script>
+
+</body>
+
+</html>
